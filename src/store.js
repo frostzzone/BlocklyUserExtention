@@ -134,7 +134,7 @@ Blockly.Blocks[name] = {
   }
 };
   console.log(Blockly.JS)
-	eval(`Blockly.JS['${name}'] = extentions[index].data.${functionName}`)
+	eval(`Blockly$4.JS['${name}'] = extentions[index].data.${functionName}`)
 				}
 				let maxExtName = 20;
 				let catName = item.category||item.id
