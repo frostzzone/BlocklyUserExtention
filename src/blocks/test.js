@@ -1,4 +1,8 @@
-import * as Blockly from "blockly/core";
+import * as Block from "blockly/core";
+import {javascriptGenerator} from 'blockly/javascript';
+
+let Blockly = Object.create(Block);
+Blockly.JS = javascriptGenerator;
 
 const FIELDS = ["color", "number"];
 const TYPES = ["Colour", "Number"];

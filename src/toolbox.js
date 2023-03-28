@@ -6,7 +6,7 @@ export default (extentions) => {
 		ext = extentions
 	}
     return [`<xml>
-	<category name="Swap toolbox">
+	<category name="Ext toolbox">
 		<block type="swapTB"/>
  	</category>
 	<category name="Logic" colour="%{BKY_LOGIC_HUE}">
@@ -41,11 +41,11 @@ export default (extentions) => {
 	<category name="Variables" custom="VARIABLE" colour="%{BKY_VARIABLES_HUE}">
 	</category>
  <category name="test">
- <block type="test"></block>
+ <block type="test" disabled="true"></block>
  </category>
 </xml>`,
 					 `<xml>
-			<category name="Swap toolbox">
+			<category name="Norm toolbox">
 				<block type="swapTB"/>
  			</category>
           <category name="Stocks" colour="%{BKY_LOOPS_HUE}">

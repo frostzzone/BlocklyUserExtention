@@ -1,12 +1,7 @@
-/**
- * @license
- * Copyright 2022 Google LLC
- * SPDX-License-Identifier: Apache-2.0
- */
-
 import { fileURLToPath, URL } from "url";
+import { join, parse, resolve } from "path";
 
-import { defineConfig } from "vite";
+import { defineConfig, normalizePath } from "vite";
 import vue from "@vitejs/plugin-vue";
 
 import { viteStaticCopy } from "vite-plugin-static-copy";
@@ -45,6 +40,14 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": fileURLToPath(new URL("./src", import.meta.url)),
+    },
+  },
+	build: {
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, 'index.html'),
+        nested: resolve(__dirname, 'docs/index.html'),
+      },
     },
   },
 });

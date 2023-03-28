@@ -12,7 +12,11 @@
 // More on defining blocks:
 // https://developers.google.com/blockly/guides/create-custom-blocks/define-blocks
 
-import * as Blockly from "blockly/core";
+import * as Block from "blockly/core";
+import {javascriptGenerator} from 'blockly/javascript';
+
+let Blockly = Object.create(Block);
+Blockly.JS = javascriptGenerator;
 
 Blockly.Blocks["stock_buy_simple"] = {
   init: function () {

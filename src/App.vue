@@ -23,10 +23,13 @@ const ChangeTB = () => {
 	state.workspace.getFlyout().hide()
 }
 
-import * as Blockly from "blockly/core";
+import * as Block from "blockly/core";
 import {javascriptGenerator} from 'blockly/javascript';
-
+	
+let Blockly = Object.create(Block);
 Blockly.JS = javascriptGenerator;
+
+import { ScrollBlockDragger, ScrollMetricsManager} from '@blockly/plugin-scroll-options';
 	
 import { ref } from "vue";
 import BlocklyComponent from "./components/BlocklyComponent.vue";
@@ -56,6 +59,14 @@ const options = {
     length: 3,
     colour: "#ccc",
     snap: true,
+  },
+	plugins: {
+      // These are both required.
+      'blockDragger': ScrollBlockDragger,
+      'metricsManager': ScrollMetricsManager,
+    },
+	move: {
+    wheel: true, // Required for wheel scroll to work.
   },
   toolbox: tool[tb],
 };

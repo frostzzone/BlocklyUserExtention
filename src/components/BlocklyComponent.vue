@@ -13,6 +13,8 @@
 import { onMounted, ref, shallowRef } from "vue";
 import Blockly from "blockly";
 
+import { ScrollOptions } from '@blockly/plugin-scroll-options';
+
 import { data } from '../store.js'
 const state = data();
 
@@ -29,6 +31,10 @@ onMounted(() => {
     options.toolbox = blocklyToolbox.value;
   }
   workspace.value = Blockly.inject(blocklyDiv.value, options);
+
+	/*const plugin = new ScrollOptions(workspace);
+	plugin.init();*/
+	
 	//console.log(workspace)
 	state.workspace = workspace
 });
