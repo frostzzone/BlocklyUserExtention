@@ -133,6 +133,7 @@ Blockly.Blocks[name] = {
     this.jsonInit(bloc);
   }
 };
+  console.log(Blockly.JS)
 	eval(`Blockly.JS['${name}'] = extentions[index].data.${functionName}`)
 				}
 				let maxExtName = 20;
